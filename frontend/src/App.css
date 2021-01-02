@@ -1,10 +1,10 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+body {
+  background-color: #C8C8C8
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,6 +26,157 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.div-box {
+  width: 210px;
+  border: 2px dotted black;
+  margin: 20px;
+  float: left;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.div-box-form {
+  width: 720px;
+  border: 2px dotted black;
+  margin: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.div-box-cart-details {
+  
+  border: 2px dotted black;
+  margin: 20px;
+  width: 700px;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+}
+
+.div-box-cart {
+  width: 100px;
+  height: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: white;
+  display: inline-block;
+}
+
+.p-price {
+  color: #DC143C;
+  font-weight: bold;
+}
+
+.div-description {
+  border: 2px dotted black;
+  margin: 20px;
+  padding-bottom: 145px;
+  background-color: white;
+}
+
+.button {
+  background-color: #FFA500;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.small-button {
+  background-color: #FFA500;
+  border: none;
+  color: white;
+  padding: 15px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.image-wrap {
+  float: left;
+  width: 350px;
+}
+
+.margin-20 {
+  margin: 20px;
+}
+
+.title-product {
+  margin: 20px;
+  font-style: italic ;
+}
+
+.p-details {
+  color: #787878;
+  font-weight: bold;
+}
+
+.float-right {
+  float: left;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.float-right-1 {
+  float: right;
+}
+
+.align-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.align-content-text {
+  text-align: center;
+}
+
+.display-block {
+  display: block;
+}
+
+.menu {
+  background-color: #696969;
+}
+
+.small-image {
+  width: 60px;
+}
+
+.div-form {
+  margin: 20px;
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 30px;
+}
+
+input[type=button]:disabled {
+  background: #dddddd;
 }
 
 @keyframes App-logo-spin {
