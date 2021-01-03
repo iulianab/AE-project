@@ -1,7 +1,7 @@
 # Magazin online de jucarii
 # Teste de performanta
 
-S-au efectuat teste de performanta pe componenta lista de produse.
+ S-au efectuat teste de performanta pe componenta lista de produse.
 
 1. Test api /products
 
@@ -16,6 +16,8 @@ In medie se pot servii 26 de request-uri fata de 30 cate au fost stabilite initi
 Timpul mediu de raspuns analizat pentru 95% dintre request-uri este de 377 ms.
 
 Timpul minim inregistrat este de 102 ms, iar cel maxim atinge 563 ms.
+
+
 
 
 2. Test pagina produse
