@@ -37,7 +37,10 @@ class ProductDetails extends Component {
         <p className='p-details' >Descriere: </p>
         <p>{this.props.item.description}</p>
       </div>
-        <input type="button" className = 'button float-right' value="Adauga in cos" onClick={() => this.props.onDelete(this.props.item.name)} />
+       {this.props.item.stock > 0 ?<input type="button float-right" className = 'button' value="Adauga in cos" onClick={() => this.props.onDelete(this.props.item.name)} />
+        :          
+        <input type="button"  disabled className = 'button float-right' value="Adauga in cos" onClick={() => this.props.onDelete(this.props.item.name)} />
+       }
       </div>
       <input type="button" className='button' value="Inapoi" onClick={() => this.props.onExit()}/>
       </div>

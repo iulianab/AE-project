@@ -164,19 +164,27 @@ app.post('/order/:firstName/:lastName', async(req, res) => {
 app.post('/orderrow/:firstName/:lastName/:productId/:orderDate', async(req, res) => {
 	try {
 		let clients = await Clients.findAll({ where: { firstName: req.params.firstName, lastName: req.params.lastName } });
-		let products = await Products.findAll({ where: { id: req.params.productId } });
+		let product = await Products.findOne({ where: { id: req.params.productId } });
 		if (clients && clients[0]) {
 			let orders = await Order.findAll({ where: { clientId: clients[0].id, order_date: req.params.orderDate } });
-			if (orders && orders[0] && products && products[0]) {
+			if (orders && orders[0] && product) {
 				let order_row = req.body
 				order_row.orderId = orders[0].id;
 				order_row.productId = req.params.productId;
 				await Order_row.create(order_row)
-				let p1 = products[0];
-				let p2 = products[0];
-			    p2.stock = 0;
-				await p1.update(p2)
-				res.status(201).json({ message: p2 })
+				let p = {
+					name: product.name,
+					description: product.description,
+					brand: product.brand,
+					image_list: product.image_list,
+					image_detail: product.image_detail,
+					price: product.price,
+					stock: product.stock - order_row.quantity,
+					age_category: product.age_category,
+					gender_category: product.gender_category
+				}
+				await product.update(p);
+				res.status(201).json({ message: product })
 			}
 			else {
 				res.status(404).json({ message: 'not found' })

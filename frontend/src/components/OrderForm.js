@@ -22,23 +22,23 @@ class OrderForm extends Component {
       <h2>Finalizare comanda</h2>
         <form>
         <div className='div-form'>
-          <label for="firstName">Nume: </label>
+          <label>Nume: </label>
           <input type="text" id="firstName" name="firstName" onChange={this.handleChange} />
         </div>
         <div className='div-form'>
-          <label for="lastName">Prenume: </label>
+          <label>Prenume: </label>
           <input type="text" id="lastName" name="lastName" onChange={this.handleChange} />
         </div>
         <div className='div-form'>
-          <label for="address">Adresa: </label>
+          <label>Adresa: </label>
           <input type="text" id="address" name="address" onChange={this.handleChange} />
         </div>
         <div className='div-form'>
-          <label for="email">Email: </label>
+          <label>Email: </label>
           <input type="text" id="email" name="email" onChange={this.handleChange} />
         </div>
         <div className='div-form'>
-          <label for="phone">Telefon: </label>
+          <label>Telefon: </label>
           <input type="text" id="phone" name="phone" onChange={this.handleChange} />
         </div>
         <div className='div-form'>

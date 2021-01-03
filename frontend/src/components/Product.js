@@ -18,7 +18,7 @@ class Product extends Component {
         <img src={this.props.item.image_list} alt="Unavailable"></img>
           <p>{this.props.item.name}</p>
            <p className= 'p-price'>{this.props.item.price} Lei</p>
-           <p>{this.props.item.stock > 0 ? 'In stoc' : 'Stoc epuizat'}</p>
+           <p>{this.props.item.stock > 0 ? 'Stoc: ' + this.props.item.stock + ' buc' : 'Stoc epuizat'}</p>
         </div>
         {this.props.item.stock > 0 ?<input type="button" className = 'button' value="Adauga in cos" onClick={() => this.props.onDelete(this.props.item.name)} />
         :          

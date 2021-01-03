@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Store from '../stores/Store';
 import CartProductDetails from './CartProductDetails';
+import Product from './Product';
 import OrderForm from './OrderForm'
 
 class CartDetails extends Component {
@@ -14,21 +15,43 @@ class CartDetails extends Component {
         }
         this.store = new Store()
         this.add = (client) => {
-            let currentDate = new Date();
-            this.store.addOne(client);
-            this.store.emitter.addListener('ADD_SUCCESS_CLIENT', () => {
-            this.store.addOneOrder(client.firstName, client.lastName, currentDate.toDateString());
-            });
-            this.store.emitter.addListener('ADD_SUCCESS_ORDER', () => {
-                console.log(this.state.productsForSave.length);
-            for (var i = 0; i < this.state.productsForSave.length; i++) {
-                this.store.addOneOrderRow(client.firstName, client.lastName, this.state.productsForSave[i].productId, currentDate.toDateString(), this.state.productsForSave[i].quantity);
-                if(i == this.state.productsForSave.length - 1) {
-                    localStorage.removeItem('list');
-                }
+            if (client.firstName === '') {
+                alert('Completati numele!');
             }
-            });
-            alert('Comanda plasata cu succes!');
+            else if (client.lastName === '') {
+                alert('Completati prenumele');
+            }
+            else if (client.address === '') {
+                alert('Completati adresa!')
+            }
+            else if (client.email === '') {
+                alert('Completati adresa de email!')
+            }
+            else if (client.phone === '') {
+                alert('Completati numarul de telefon!')
+            }
+            else {
+                let currentDate = new Date();
+                let currentTime = currentDate.toLocaleTimeString();
+                this.store.addOne(client);
+                this.store.emitter.addListener('ADD_SUCCESS_CLIENT', () => {
+                    this.store.addOneOrder(client.firstName, client.lastName, currentDate.toDateString() + 'T' + currentTime);
+                });
+                this.store.emitter.addListener('ADD_SUCCESS_ORDER', () => {
+                    console.log(this.state.productsForSave.length);
+                    for (var i = 0; i < this.state.productsForSave.length; i++) {
+                        this.store.addOneOrderRow(client.firstName, client.lastName, this.state.productsForSave[i].productId, currentDate.toDateString() + 'T' + currentTime, this.state.productsForSave[i].quantity);
+                        if (i == this.state.productsForSave.length - 1) {
+                            localStorage.removeItem('list');
+                        }
+                    }
+                });
+                alert('Comanda plasata cu succes!');
+                var millisecondsToWait = 1000;
+                setTimeout(function() {
+                    window.location.reload(false);
+                }, millisecondsToWait);
+            }
         }
         this.delete = (name) => {
             var result = '';
