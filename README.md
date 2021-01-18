@@ -36,3 +36,5 @@ Imbunatatiri:
 - Utilizare caching, acolo unde este posibil, pentru a evita apeluri multiple catre baza de date;
 - Paralelizare instanta => mai multe thread-uri pot duce la cresterea performantei.
 
+# Link prezentare
+https://drive.google.com/file/d/1fkSXeZ41GJE2SLO6HeFntN0idfII2blS/view?usp=sharing 
